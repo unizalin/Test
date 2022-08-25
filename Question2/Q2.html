@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <div class="header">5/8 外出確認表</div>
+    <div class="content">
+      <ol class="shop-list">
+        <li class="item">麵包</li>
+        <li class="item">短袖衣服</li> <li class="item">飲用水</li> <li class="item">帳篷</li>
+        </ol>
+      <ul class="shop-list">
+        <li class="item">暈車藥</li> 
+        <li class="item">感冒藥</li> 
+        <li class="item">丹木斯</li> 
+        <li class="item">咳嗽糖漿</li>
+      </ul> 
+    </div>
+    <div class="footer">以上僅共參考</div>
+  </div>
+  <style>
+  .container {
+    font-size: 14px;
+  }
+  .container .header {
+    font-size: 18px;
+  }
+  .container .shop-list {
+    list-style: none;
+    margin-left: -15px;
+  }
+  .container .shop-list li.item {
+    color: green;
+  }
+  .container .shop-list .item {
+  /* Explain why does this color not works, and how to fix make it work on 1st list */
+    color: blue;
+  }
+  /*  
+  .container .shop-list li.item 
+  直接指定到 li 對應的 className item 
+  css 權重比
+  .container .shop-list .item
+  還多，所以會 ol ul 的 li 都為綠色
+  */
+  /* Write styling make every other line give background color to next one */
+  .container .shop-list:nth-child(1) li.item{
+    color: green;
+  }
+  .container .shop-list:nth-child(2) li.item{
+    color: blue;
+  } 
+  </style>
+</body>
+</html>
